@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Whiteboard</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section id="dashboard" class="clearfix">
+	<button id="to-projects" type="button" class="btn btn-success">Projects</button>
+	<div id="options" class="clearfix">
+		<div id="general-options">
+			<button id="newProject" type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProjectForm">Create Project</button>
+		</div>
+		<div id="project-options">
+			<button id="addPerson" type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPersonForm">Add Person</button>
+			<button id="addTask" type="button" class="btn btn-primary" data-toggle="modal" data-target="#newTaskForm">Add Task</button>
+			<ul id="peopleList"></ul>
+		</div>
+	</div>
+</section>
+
+<section id="all-projects">
+	
+</section>
+
+<section id="project">
+	<div class="section">
+	  <h1 class="text-center heading">Stories</h1>
+	  <ul id="stories-not-ready" class="connectedSortable">
+	    <h3 class="text-center">Planning</h3>
+
+	  </ul>
+	   
+	  <ul id="stories-ready" class="connectedSortable">
+	    <h3 class="text-center">Ready</h3>
+
+	  </ul>
+	</div>
+
+	<div class="section">
+	  <h1 class="text-center heading">Working</h1>
+	  <ul id="working-inprogress" class="connectedSortable">
+	    <h3 class="text-center">In Progress</h3>
+
+	  </ul>
+	   
+	  <ul id="working-done" class="connectedSortable">
+	    <h3 class="text-center">Ready</h3>
+
+	  </ul>
+	</div>
+	 
+	<div class="section">
+	  <h1 class="text-center heading">Testing</h1>
+	  <ul id="testing-inprogress" class="connectedSortable">
+	    <h3 class="text-center">In Progress</h3>
+
+	  </ul>
+	   
+	  <ul id="testing-done" class="connectedSortable">
+	    <h3 class="text-center">Ready</h3>
+
+	  </ul>
+	</div>
+	<div class="section">
+	  <h1 class="text-center heading">Done!</h1>
+	  <ul id="done" class="connectedSortable">
+	    
+	  </ul>
+	</div>
+</section>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Task Information</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+		    <input type="text" class="form-control" id="editTaskTitle" placeholder="Title">
+		</div>
+		<div class="form-group">
+		    <select id="editTaskUserID" class="form-control">
+		    	
+		    </select>
+		</div>
+		<div class="form-group">
+		    <textarea class="form-control" id="editTaskDescription" placeholder="Description"></textarea>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitEditTask" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newProjectForm" tabindex="0" role="dialog" aria-labelledby="newProjectFormLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Project</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+		    <input type="text" class="form-control" id="newProjectName" placeholder="Project Name">
+		</div>
+		<div class="form-group">
+		    <input type="text" class="form-control" id="newProjectProducer" placeholder="Project Producer">
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitNewProject" data-dismiss="modal" class="btn btn-primary">Add Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newPersonForm" tabindex="0" role="dialog" aria-labelledby="newPersonFormLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Person</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+		    <input type="text" class="form-control" id="newPersonName" placeholder="Name">
+		</div>
+		<div class="form-group">
+		    <select id="newPersonColor" class="form-control">
+		    	<option value="#b2b2ff">Blue</option>
+		    	<option value="#ffcccc">Red</option>
+		    	<option value="#e5cce5">Purple</option>
+		    	<option value="#ffecef">Pink</option>
+		    	<option value="#ffffff">White</option>
+		    	<option value="#e5e5e5">Gray</option>
+		    	<option value="#ffff7f">Yellow</option>
+		    </select>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitNewPerson" data-dismiss="modal" class="btn btn-primary">Add Person</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newTaskForm" tabindex="0" role="dialog" aria-labelledby="newTaskFormLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Task</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+		    <input type="text" class="form-control" id="newTaskTitle" placeholder="Title">
+		</div>
+		<div class="form-group">
+		    <select id="newTaskUserID" class="form-control">
+		    	
+		    </select>
+		</div>
+		<div class="form-group">
+		    <textarea class="form-control" id="newTaskDescription" placeholder="Description"></textarea>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitNewTask" data-dismiss="modal" class="btn btn-primary">Add Task</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

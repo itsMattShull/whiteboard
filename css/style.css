@@ -1,0 +1,87 @@
+ul[id^='stories-'], ul[id^='working-'], ul[id^='testing-'], #done {
+    border: 1px solid #eee;
+    width: 142px;
+    min-height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+}
+ul[id^='stories-'] li, ul[id^='working-'] li, ul[id^='testing-'] li, #done li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 120px;
+    border:1px solid gray;
+    background:lightgray;
+    cursor: pointer;
+    border-radius: 4px;
+    padding:7px;
+}
+
+.section {
+    border: 5px solid #eee;
+    float:left;
+    padding:10px;
+} 
+
+.heading {
+  margin:0px 0px 10px 0px;
+}
+
+#project {
+  display:none;
+}
+
+.project-button {
+  border:1px solid gray;
+  background:#ededed;
+  padding: 25px 30px;
+  float: left;
+  width:25%;
+  cursor: pointer;
+}
+
+.project-button:hover {
+  background:lightgray;
+}
+
+.project-button-name {
+  font-size: 20px;
+}
+
+#dashboard {
+  padding:15px;
+}
+
+#to-projects {
+  float:left;
+  width:10%;
+}
+
+#options {
+  float:left;
+  width:auto;
+}
+
+#general-options, #project-options {
+  float:left;
+  padding-left:15px;
+}
+
+#project-options {
+  display:none;
+}
+
+#peopleList {
+  display:inline-block;
+  list-style: none;
+}
+
+.person {
+  display:inline-block;
+  list-style: none;
+  border:1px solid #eee !important;
+  margin-right:5px;
+}
