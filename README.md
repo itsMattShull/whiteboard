@@ -5,7 +5,7 @@ A project management tool designed to keep people on task through multiple proje
 A full featured demo can be found at [mattshull.com/wbdemo](http://www.mattshull.com/wbdemo).
 
 ###Setup
-Just download the files, drop them in a folder, create a database and tables using databases.sql[databases.sql](../blob/master/databases.sql), and change [process/connect.php](../blob/master/process/connect.php) to include the correct database credentials.
+Just download the files, drop them in a folder, create a database and tables using [databases.sql](master/databases.sql), and change [process/connect.php](master/process/connect.php) to include the correct database credentials.
 
 ###Usage
 There are 4 main sections in whiteboard: Stories, Working, Testing, and Done.  
